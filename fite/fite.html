@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FITE's Project Page</title>
+<!-- Bootstrap -->
+<link href="./css/bootstrap-4.0.0.css" rel="stylesheet">
+</head>
+<body>
+<div id="page_container">
+<header>
+  <div class="jumbotron" >
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h5 class="text-center">ECCV 2022</h5>
+          <h2 class="text-center">Learning Implicit Templates for Point-Based Clothed Human Modeling</h1>
+          <p class="text-center">&nbsp;</p>
+          <h6 class="text-center"><a href="https://jsnln.github.io/">Siyou Lin, <a href="https://hongwenzhang.github.io/">Hongwen Zhang</a>, <a href="https://zhengzerong.github.io/">Zerong Zheng</a>, <a href="https://dsaurus.github.io/saurus">Ruizhi Shao</a>, <a href="http://liuyebin.com/">Yebin Liu</a></h6>
+          <p class="text-center">Tsinghua University</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<section>
+  <div class="container">
+    <p>&nbsp;</p>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+        <h2>Abstract</h2>
+      </div>
+    </div>
+  </div>
+  <div class="container ">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 text-center  offset-xl-0 col-xl-12">
+        <p class="text-left"><em>We present <strong>FITE</strong>, a <strong>First-Implicit-Then-Explicit</strong> framework for modeling human avatars in clothing. Our framework first learns implicit surface templates representing the coarse clothing topology, and then employs the templates to guide the generation of point sets which further capture pose-dependent clothing deformations such as wrinkles. Our pipeline incorporates the merits of both implicit and explicit representations, namely, the ability to handle varying topology and the ability to efficiently capture fine details. We also propose diffused skinning to facilitate template training especially for loose clothing, and projection-based pose-encoding to extract pose information from mesh templates without predefined UV map or connectivity.</em></p>
+        <p class="text-left">&nbsp;</p>
+        <h5 class="text-center">
+          <a href="assets/fite_paper_crv1.pdf">[Paper]</a>
+          <a href="empty">[Code (coming soon)]</a>
+        </h5>
+        
+      </div>
+    </div>
+
+    <hr>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+        <h2>Method</h2>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 text-center offset-xl-1 col-xl-10">
+        <p class="text-left">&nbsp;</p>
+        <img src="assets/pipeline.png" width="800" alt=""/>
+        <p>Fig 1.&nbsp;Overall pipeline of our first-implicit-then-explicit framework. Left: In stage one we learn implicit templates of different outfits with diffused skinning. Right: In stage two we predict pose-dependent offset from features extracted by projection-based encoders.</p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 text-center offset-xl-1 col-xl-10"> <img src="assets/diffused_skinning.png" width="800" alt=""/>
+        <p>&nbsp;</p>
+        <p class="text-center">Fig 2. Diffused skinning visualized. Each component of the skinning weights on SMPL [1] is<br> diffused independently and re-normalized to form a skinning field.</p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+
+    <hr>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+        <h2>Results </h2>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 text-center offset-xl-1 col-xl-10"> 
+        <img src="assets/results.png" width="600" alt=""/>
+        <p>&nbsp;</p>
+        <p class="text-center">Fig 3. Qualitative comparison of our method and POP [2] for novel poses. Our method<br> produces denser and more continuous point clouds than POP [2].</p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+
+    <!-- <hr>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+        <h2>Technical Paper</h2>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center"> <a href="assets/main.pdf"><img src="assets/paper.png" width="1000" alt=""/></a>
+      <p>&nbsp;</p>
+    </div> -->
+
+    <hr>
+    <div class="row">
+      <div class="col-lg-12 mb-4 mt-2 text-center">
+        <h2>Demo Video</h2>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+      <video controls="controls" width="1024" height="576">
+        <source src="assets/demovideo.mp4" type="video/mp4">
+      </video>
+      <p>&nbsp;</p>
+    </div>
+	<hr>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+        <h2>References</h2>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-left">
+      <p>[1] Loper, M., Mahmood, N., Romero, J., Pons-Moll, G., Black, M.J.: SMPL: A skinned multi-person linear model. ACM Transactions on Graphics 34(6), 248 (2015)
+      </p>
+      <p>[2] Ma, Q., Yang, J., Tang, S., Black, M.J.: The power of points for modeling humans in clothing. In: Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) (Oct 2021)
+      </p>
+      <p>&nbsp;</p>
+    </div>
+	<hr>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+        <h2>Citation</h2>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-left">
+      <p><span style="color:#000000;font-family:'Courier New';font-size:15px;">
+      @inproceedings{lin2022fite,<br>
+        &nbsp;&nbsp;title={Learning Implicit Templates for Point-Based Clothed Human Modeling},<br>
+        &nbsp;&nbsp;author={Lin, Siyou and Zhang, Hongwen and Zheng, Zerong and Shao, Ruizhi and Liu, Yebin},<br>
+        &nbsp;&nbsp;booktitle={ECCV},<br>
+        &nbsp;&nbsp;year={2022}<br>
+		}</span></p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+    </div>
+    <div class="row"> </div>
+  </div>
+  <div class="jumbotron"> </div>
+</section>	
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="./js/jquery-3.2.1.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="./js/popper.min.js"></script> 
+<script src="./js/bootstrap-4.0.0.js"></script>
+</body>
+</html>
