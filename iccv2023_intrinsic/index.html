@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IntrinsicGarmAlign's Project Page</title>
+<!-- Bootstrap -->
+<link href="./css/bootstrap-4.0.0.css" rel="stylesheet">
+<style>
+    centeredimg {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+</head>
+<body>
+<div id="page_container">
+<header>
+  <div class="jumbotron" >
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h5 class="text-center">ICCV 2023</h5>
+          <h2 class="text-center">Leveraging Intrinsic Properties for Non-Rigid Garment Alignment</h1>
+          <p class="text-center">&nbsp;</p>
+          <h6 class="text-center"><a href="https://jsnln.github.io/">Siyou Lin</a>, Boyao Zhou, <a href="https://zhengzerong.github.io/">Zerong Zheng</a>, <a href="https://hongwenzhang.github.io/">Hongwen Zhang</a>, <a href="http://liuyebin.com/">Yebin Liu</a></h6>
+          <p class="text-center">Tsinghua University</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<section>
+    
+    <div class="container">
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+        <h5 class="text-center">
+            <a href="">Paper (soon)</a> | 
+            <a href="">Supp (soon)</a> | 
+            <a href="https://github.com/jsnln/IntrinsicGarmAlign">Code (soon)</a> | 
+            <a href="">Poster (soon)</a>
+        </h5>
+        <p>&nbsp;</p>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+            <h2>One-sentence Overview</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center  offset-xl-0 col-xl-12">
+            <p class="text-center">A novel method that leverages <strong>intrinsic manifold properties</strong> for <strong>wrinkle-level and texture-level</strong> non-rigid garment alignment.</p>
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center offset-xl-0 col-xl-12">
+            <p>&nbsp;</p>
+            <img src="assets/fig-teaser-large.jpg" width="1000" alt="" class="centeredimg"/>
+            <p>&nbsp;</p>
+        </div>
+    </div>
+    <div class="container">
+        <p>&nbsp;</p>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+            <h2>Abstract</h2>
+            </div>
+        </div>
+    </div>
+  <div class="container ">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 text-center  offset-xl-0 col-xl-12">
+        <p class="text-left"><em>We address the problem of aligning real-world 3D data of garments, which benefits many applications such as texture learning, physical parameter estimation, generative modeling of garments, etc. Existing extrinsic methods typically perform non-rigid iterative closest point and struggle to align details due to incorrect closest matches and rigidity constraints. While intrinsic methods based on functional maps can produce high-quality correspondences, they work under isometric assumptions and become unreliable for garment deformations which are highly non-isometric. To achieve wrinkle-level as well as texture-level alignment, we present a novel coarse-to-fine two-stage method that leverages intrinsic manifold properties with two neural deformation fields, in the 3D space and the intrinsic space, respectively. The coarse stage performs a 3D fitting, where we leverage intrinsic manifold properties to define a manifold deformation field. The coarse fitting then induces a functional map that produces an alignment of intrinsic embeddings. We further refine the intrinsic alignment with a second neural deformation field for higher accuracy. We evaluate our method with our captured garment dataset, GarmCap. The method achieves accurate wrinkle-level and texture-level alignment and works for difficult garment types such as long coats.</em></p>
+        <p class="text-left">&nbsp;</p>
+      </div>
+    </div>
+
+    <hr>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+        <h2>Movitation & Method</h2>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 text-left offset-xl-0 col-xl-12">
+        <p>&nbsp;</p>
+        <p class="text-left">Accurately aligning garment geometries benefits many applications such as texture learning, physical parameter estimation, generative modeling of garments, etc. However, existing methods cannot achieve wrinkle-level and texture-level alignment, because:
+        <ul>
+            <li>existing extrinsic (3D) methods mostly use non-rigid iterative closest point (ICP), facing a tradeoff between rigidity and flexibility;</li>
+            <li>existing intrinsic methods use intrinsic features, which suffer from ambiguities (eigenfunction sign ambiguity, eigenvalue switching and multiplicity of eigenvalues).</li>
+        </ul>
+        Our observations are:
+        <ul>
+            <li>Garment deformations being highly non-rigid (e.g., detailed wrinkles) is the major difficulty.
+            <li>Intrinsic shapes, compared to their extrinsic counterparts, are more "flat". In other words, they do not have "wrinkles". However, intrinsic shapes suffer from ambiguities, so they cannot be used for fitting directly.</li>
+            <li>A coarse 3D fitting is enough for resolving said ambiguities using the Functional Maps framework. After this, we can perform another fitting stage in the intrinsic shape, obtaining wrinkle-level alignment.</li>
+        </ul>
+        Our whole pipeline is structured as shown below.
+        </p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center offset-xl-0 col-xl-12">
+          <img src="assets/fig-method.jpg" width="950" alt="" class="centeredimg"/>
+          <p>&nbsp;</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 text-left offset-xl-0 col-xl-12">
+          <p>&nbsp;</p>
+          <p class="text-left">The overall pipeline of our intrinsic garment alignment method consists the following steps.
+            <ol>
+                <li>The <span style="color:#1080FF;"><strong>coarse stage</strong></span> computes an intrinsic neural deformation field from a linear blend skinning (LBS) initialization. Since coarse alignment do not align fine details, we use it to induce a functional map that resolves the intrinsic embedding ambiguity.</li>
+                <li>In the <span style="color:#8010FF;"><strong>refining stage</strong></span> we refine the intrinsic shape matching using another neural deformation field in the intrinsic space.</li>
+                <li>The final alignment comes from <span style="color:#C05000;"><strong>shape transfer</strong></span> through the point-to-point matching given by the refined intrinsic shape correspondences.</li>
+            </ol>
+          </p>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+        <h2>Results </h2>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center offset-xl-0 col-xl-12">
+            <img src="assets/fig-results-wsource.jpg" width="950" alt="" class="centeredimg"/>
+            <p>&nbsp;</p>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row">
+      <div class="col-lg-12 mb-4 mt-2 text-center">
+        <h2>Demo Video</h2>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+      <video controls="controls" width="1024" height="500">
+        <source src="assets/demo_compressed.mp4" type="video/mp4">
+      </video>
+      <p>&nbsp;</p>
+    </div>
+
+</section>	
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="./js/jquery-3.2.1.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="./js/popper.min.js"></script> 
+<script src="./js/bootstrap-4.0.0.js"></script>
+</body>
+</html>

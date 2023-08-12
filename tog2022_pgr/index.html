@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PGR's Project Page</title>
+<!-- Bootstrap -->
+<link href="./css/bootstrap-4.0.0.css" rel="stylesheet">
+<style>
+    centeredimg {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+</head>
+<body>
+<div id="page_container">
+<header>
+    <div class="container" >
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center offset-xl-0 col-xl-12">
+            <p>&nbsp;</p>
+            <img src="assets/logo_all.jpg" width="750" alt="" class="centeredimg"/>
+            <p>&nbsp;</p>
+        </div>
+    </div>
+</header>
+<header>
+  <div class="jumbotron" >
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h5 class="text-center">ACM Transactions on Graphics 2022<br>Presented at SIGGRAPH 2023</h5>
+          <h2 class="text-center">Surface Reconstruction from Point Clouds without Normals by Parametrizing the Gauss Formula</h2>
+          <p class="text-center">&nbsp;</p>
+          <h5 class="text-center">Parametric Gauss Reconstruction (PGR)</h4>
+          <p class="text-center">&nbsp;</p>
+          <h6 class="text-center"><a href="https://jsnln.github.io/">Siyou Lin<sup>1</sup></a>, Dong Xiao<sup>1</sup>, <a href="https://shizqi.github.io/">Zuoqiang Shi<sup>1,2</sup></a>, <a href="https://binwangthss.github.io/">Bin Wang<sup>1,3</sup></a></h6>
+          <p class="text-center"><sup>1</sup>Tsinghua University</p>
+          <p class="text-center"><sup>2</sup>Yanqi Lake Beijing Institute of Mathematical Sciences and Applications (BIMSA)</p>
+          <p class="text-center"><sup>3</sup>Beijing National Research Center for Information Science and Technology (BNRIST)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<section>
+    <div class="container">
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+        <h5 class="text-center">
+            <a href="https://dl.acm.org/doi/pdf/10.1145/3554730">Paper</a> | 
+            <a href="https://github.com/jsnln/ParametricGaussRecon">Code</a> |
+            <a href="assets/pgr-pre.pdf">Slides (SIGGRAPH 2023)</a>
+        </h5>
+        <p>&nbsp;</p>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+            <h2>One-sentence Overview</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center  offset-xl-0 col-xl-12">
+            <p class="text-center">We use the <strong>Gauss formula, an extended version of winding number</strong>, to build an equation from which normals of raw points can be solved.</p>
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center offset-xl-0 col-xl-12">
+            <p>&nbsp;</p>
+            <img src="assets/fig-teaser-large.jpg" width="1000" alt="" class="centeredimg"/>
+            <p>&nbsp;</p>
+        </div>
+    </div>
+    <div class="container">
+        <p>&nbsp;</p>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+            <h2>Abstract</h2>
+            </div>
+        </div>
+    </div>
+  <div class="container ">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 text-center  offset-xl-0 col-xl-12">
+        <p class="text-left"><em>We propose Parametric Gauss Reconstruction (PGR) for surface reconstruction from point clouds without normals. Our insight builds on the Gauss formula in potential theory, which represents the indicator function of a region as an integral over its boundary. By viewing surface normals and surface element areas as unknown parameters, the Gauss formula interprets the indicator as a member of some parametric function space. We can solve for the unknown parameters using the Gauss formula and simultaneously obtain the indicator function. Our method bypasses the need for accurate input normals as required by most existing non-data-driven methods, while also exhibiting superiority over data-driven methods, since no training is needed. Moreover, by modifying the Gauss formula and employing regularization, PGR also adapts to difficult cases such as noisy inputs, thin structures, sparse or nonuniform points, for which accurate normal estimation becomes quite difficult.</em></p>
+        <p class="text-left">&nbsp;</p>
+      </div>
+    </div>
+
+    <hr>
+    <div class="row">
+        <div class="col-lg-12 mb-4 mt-2 text-center">
+          <h2>Demo Video</h2>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 text-left offset-xl-0 col-xl-12">
+            <p>&nbsp;</p>
+            <p class="text-left">Our method can deal with a number of difficult cases:
+                <ul>
+                    <li>thin structures</li>
+                    <li>complex geometries</li>
+                    <li>high-genus surfaces</li>
+                    <li>sparse inputs</li>
+                    <li>wireframes</li>
+                    <li>noisy points</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+        <video controls="controls" width="1024" height="500">
+          <source src="assets/p3_compressed.mp4" type="video/mp4">
+        </video>
+        <p>&nbsp;</p>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 text-left offset-xl-0 col-xl-12">
+            <p>&nbsp;</p>
+            <p class="text-left">Even if noise is so large that the original shape is barely recognizable.
+            </p>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+        <video controls="controls" width="1024" height="500">
+          <source src="assets/p4_compressed.mp4" type="video/mp4">
+        </video>
+        <p>&nbsp;</p>
+    </div>
+    
+
+
+    <hr>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center">
+        <h2>Method</h2>
+      </div>
+    </div>    
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 text-left offset-xl-1 col-xl-10">
+        <p>&nbsp;</p>
+        <p class="text-left">Surface reconstruction is a well-studied problem in computer graphics. However, most reconstruction algorithms require consistently oriented normals, and cannot deal with raw unoriented points. We tackle the problem of surface reconstruction from points without normals. Our insight comes from the Gauss formula, which can be seen as an extended version of the winding number formula. <strong>The Gauss formula allows us to write down an equation from which normals of unoriented normals can be solved.</strong> The process of writing down this equation can be thought of as building a parametric function space using the Gauss formula, with unknown normals as the parameters, so we term our method <strong>Gauss Reconstruction (PGR)</strong>.
+        </p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center offset-xl-1 col-xl-10">
+          <img src="assets/gauss-formula.jpg" width="800" alt="" class="centeredimg"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 text-left offset-xl-1 col-xl-10">
+          <p>&nbsp;</p>
+          <p class="text-left">To convert the integral equation to a practical solvable system, we first discretize the integral by approximating it using a summation. This results in a linear system which is <strong>non-square, underdetermined and dense</strong>.
+          <p>&nbsp;</p>
+          </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center offset-xl-1 col-xl-10">
+          <img src="assets/parametrizing-gauss-formula.jpg" width="800" alt="" class="centeredimg"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 text-left offset-xl-1 col-xl-10">
+          <p>&nbsp;</p>
+          <p class="text-left">To efficiently solve the underdetermined dense system, we apply the CGNE (Conjugate Gradients for Normal Equations) solver plus our own adaptive regularization.
+          <p>&nbsp;</p>
+          </p>
+        </div>
+    </div>
+
+  </div>
+  <!-- <div class="jumbotron"> </div> -->
+</section>	
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="./js/jquery-3.2.1.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="./js/popper.min.js"></script> 
+<script src="./js/bootstrap-4.0.0.js"></script>
+</body>
+</html>
